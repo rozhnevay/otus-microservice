@@ -22,7 +22,7 @@ curl --request POST \
 ```
 ```bash
 curl --request PUT \
-  --url http://arch.homework/user1/3 \
+  --url http://arch.homework/user/1 \
   --header 'Content-Type: application/json' \
   --data '{
 	"name": "qwerty1"
