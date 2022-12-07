@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: pg-configmap
+data:
+  DATASOURCE_URL: "jdbc:postgresql://postgresql:5432/postgres"
+  DATASOURCE_USERNAME: "postgres"
