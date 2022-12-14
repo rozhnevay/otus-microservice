@@ -43,4 +43,4 @@ spec:
         - destination:
             port:
               number: 80
-            host: java-service.default.svc.cluster.local
+            host: java-service

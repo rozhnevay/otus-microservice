@@ -1,23 +1,8 @@
 ## Установка istio с помощью istioctl
-```bash
-istioctl install 
-istioctl operator init
-kubectl apply -f .\routes.yaml
-```
-Установить IstioOperator - перейти в каталог `gateway` и выполнить
-```bash
-kubectl apply -f istio.yaml
-```
-Настроить проксирование порта 80 с хостовой машины:
-```bash
-kubectl edit -n istio-system deployment istio-ingressgateway
-```
-Добавить:
-```
-	- containerPort: 80
-      protocol: TCP
-	  hostPort: 80
-```
+Установка описана здесь:
+https://github.com/izhigalko/otus-demo-apigw#%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0-Istio-Gateway
+
+
 ## Установка profile-service
 0 - перейти в каталог `profile-service`
 ```bash
@@ -36,5 +21,3 @@ helm install postgresql bitnami/postgresql
 ```bash
 kubectl apply -f . 
 ```
-
-## Установка gateway

@@ -105,7 +105,6 @@ spec:
 
     gateways:
       istio-ingressgateway:
-        name: istio-egressgateway
         autoscaleEnabled: false
         type: NodePort
         ports:
@@ -113,6 +112,6 @@ spec:
             name: status-port
             protocol: TCP
           - port: 80
-            targetPort: 8080
+            targetPort: 80
             name: http2
             protocol: TCP
