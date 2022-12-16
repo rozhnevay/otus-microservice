@@ -25,17 +25,17 @@ spec:
   gateways:
     - ingress
   http: # Обратите внимание на порядок маршрутов, маршрут / идет последним, иначе все запросы будут идти именно в него
-#    - name: "auth-whitelisted" # Указываем имя для применения EnvoyFilter
-#      match:
-#        - uri:
-#            prefix: /auth/ # Все запросы к /auth/ направляем к auth-service
-#      rewrite:
-#        uri: / # Перезаписываем префикс с /auth/ на /, чтобы запросы шли в корень сервиса
-#      route:
-#        - destination:
-#            port:
-#              number: 80
-#            host: auth-service.default.svc.cluster.local
+    - name: "auth-whitelisted" # Указываем имя для применения EnvoyFilter
+      match:
+        - uri:
+            prefix: /auth/ # Все запросы к /auth/ направляем к auth-service
+      rewrite:
+        uri: / # Перезаписываем префикс с /auth/ на /, чтобы запросы шли в корень сервиса
+      route:
+        - destination:
+            port:
+              number: 80
+            host: keycloak
     - match:
         - uri:
             prefix: / # Остальные запросы направляем к echoserver

@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: java
-          image: 17709729/otus-microservice:hw04
+          image: 17709729/otus-microservice:hw05
           env:
             - name: DATASOURCE_URL
               valueFrom:
@@ -33,5 +33,11 @@ spec:
                 secretKeyRef:
                   name: postgresql
                   key: postgres-password
+            - name: KEYCLOAK_URL
+              valueFrom:
+                configMapKeyRef:
+                  name: configmap-keycloak
+                  key: KEYCLOAK_URL
+
           ports:
             - containerPort: 8080

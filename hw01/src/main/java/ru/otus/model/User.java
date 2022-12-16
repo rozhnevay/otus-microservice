@@ -1,9 +1,10 @@
 package ru.otus.model;
 
-import jakarta.persistence.*;
 import lombok.Data;
 import org.hibernate.annotations.Generated;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
+
+import javax.persistence.*;
 
 @Entity
 @Table(name = "t_user")
@@ -11,9 +12,14 @@ import org.springframework.boot.autoconfigure.domain.EntityScan;
 public class User {
     @Id
     @Column(unique = true, nullable = false)
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private String id;
 
     @Column(nullable = false)
     private String name;
+
+    @Transient
+    private String password;
+
+    @Transient
+    private String email;
 }

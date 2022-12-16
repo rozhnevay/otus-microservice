@@ -5,6 +5,6 @@ databaseChangeLog:
       changes:
         - sql:
             sql: "CREATE TABLE t_user(
-              id     SERIAL PRIMARY KEY,
+              id     varchar(100) PRIMARY KEY,
               name  varchar(100) not null
             );"

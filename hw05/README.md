@@ -1,8 +1,16 @@
+## Описание архитектурного решения
+
+## Скрины тестов Postman
+
 ## Установка istio с помощью istioctl
-Установка описана здесь:
-https://github.com/izhigalko/otus-demo-apigw#%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0-Istio-Gateway
-
-
+```bash
+istioctl install --set meshConfig.accessLogFile=/dev/stdout
+```
+Применить istio.yaml и routes.yaml из каталога gateway
+```bash
+kubectl apply -f istio.yaml
+kubectl apply -f routes.yaml
+```
 ## Установка profile-service
 0 - перейти в каталог `profile-service`
 ```bash
@@ -21,3 +29,15 @@ helm install postgresql bitnami/postgresql
 ```bash
 kubectl apply -f . 
 ```
+
+## Установка keycloak
+```bash
+kubectl create -f https://raw.githubusercontent.com/keycloak/keycloak-quickstarts/latest/kubernetes-examples/keycloak.yaml
+```
+```bash
+minikube service --all
+```
+Перейти по url сервиса keycloak
+Создать realm через admin console
+Создать пользователя profile-service с паролем profile-service
+Создать нового клиента profile-service для нашего приложения с дефолтными настройками
