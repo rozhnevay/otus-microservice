@@ -13,7 +13,7 @@ Profile service валидирует токен и отдает результа
 
 
 ## Скрины тестов Postman
-![img.png](img.png)
+![img_3.png](img_3.png)
 ![img_1.png](img_1.png)
 ## Установка istio с помощью istioctl
 ```bash
