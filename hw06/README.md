@@ -1,7 +1,7 @@
 ## Описание архитектурного решения
 В кластере развернуты:  
 API Gateway - Istio  
-Profile service - Spring Boot Application - 2 replicas  
+Profile service - Spring Boot Application - 2 versions  
 ## Создать namespaces
 ```bash
 kubectl apply -f namespaces.yaml
