@@ -1003,4 +1003,4 @@ metadata:
   labels:
     grafana_dashboard: "1"
   name: istio-services-grafana-dashboards
-  namespace: monitoring
+  namespace: monitoringd
